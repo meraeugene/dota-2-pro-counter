@@ -285,7 +285,7 @@ export function InlineGuide({ c, D }) {
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: 10,
+                gap: 12,
                 padding: "10px 12px",
                 borderRadius: 8,
                 background: D.panel2,

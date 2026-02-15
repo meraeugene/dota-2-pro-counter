@@ -1,16 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Mulish:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 200, 150, 2);
+  border-radius: 3px;
+}
+
 body {
   font-family: "Mulish", sans-serif;
   -webkit-font-smoothing: antialiased;
+  margin: 0;
 }
 .cp {
   font-family: "Chakra Petch", sans-serif;

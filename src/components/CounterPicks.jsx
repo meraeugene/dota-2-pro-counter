@@ -111,7 +111,6 @@ const CounterPicks = ({
                   c={c}
                   rank={i + 1}
                   D={D}
-                  active={guideC === i}
                   onToggle={() => {
                     setGuideC(guideC === i ? null : i);
                   }}

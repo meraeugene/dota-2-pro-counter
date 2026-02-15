@@ -8,7 +8,7 @@ const RoleSelector = ({ pickRole, D }) => {
         <p
           className="cp"
           style={{
-            fontSize: 10,
+            fontSize: 11,
             fontWeight: 600,
             letterSpacing: 4,
             textTransform: "uppercase",

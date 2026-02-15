@@ -489,14 +489,6 @@ export const HEROES = [
     roles: ["soft_support"],
   },
   {
-    count: 62,
-    id: "night_stalker",
-    name: "Night Stalker",
-    dota: "night_stalker",
-    color: "#9381ff",
-    roles: ["offlane"],
-  },
-  {
     count: 63,
     id: "nyx_assassin",
     name: "Nyx Assassin",

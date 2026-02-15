@@ -7,6 +7,7 @@ import { getCounters } from "./utils/getCounters";
 import RoleSelector from "./components/RoleSelector";
 import HeroPicker from "./components/HeroPicker";
 import CounterPicks from "./components/CounterPicks";
+import DotaBackground from "./components/DotaBackground";
 
 // ── CDN ──────────────────────────────────────────────────────────────────────
 const PORT = (id) =>
@@ -59,80 +60,93 @@ export default function App() {
     setGuideC(null);
   }
 
+  // ── Updated design tokens — deep teal/forest theme ──────────────────────
   const D = {
-    bg: "#0d0d0d",
-    panel: "#141414",
-    panel2: "#1a1a1a",
-    bdr: "rgba(255,255,255,0.08)",
-    bdr2: "rgba(255,255,255,0.05)",
-    txt: "#ededed",
-    sub: "#999",
-    dim: "#777",
-    inp: "#0d0d0d",
+    bg: "transparent", // let DotaBackground show through
+    panel: "rgba(12,22,18,0.75)", // glass-forest panels
+    panel2: "rgba(10,18,15,0.65)",
+    bdr: "rgba(0,200,150,0.12)", // teal borders
+    bdr2: "rgba(0,200,150,0.07)",
+    txt: "#e8f0ec", // slightly warm white
+    sub: "#8ab09a", // muted sage
+    dim: "#5a7a68",
+    inp: "rgba(8,16,12,0.80)",
+    accent: "#00c896", // arcane teal
+    gold: "#c8a020", // Dota gold
   };
 
   return (
     <>
-      <div style={{ minHeight: "100vh", background: D.bg, color: D.txt }}>
-        <Header
-          D={D}
-          step={step}
-          reset={reset}
-          role={role}
-          hero={hero}
-          backToHeroPicker={backToHeroPicker}
-        />
+      <div
+        style={{
+          minHeight: "100vh",
+          background: "#060c0e" /* solid fallback */,
+          color: D.txt,
+          position: "relative",
+        }}
+      >
+        {/* Atmospheric Dota background */}
+        <DotaBackground />
 
-        <main
-          style={{
-            maxWidth: 1100,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            minHeight: "100vh",
-            margin: "0 auto",
-            padding: "32px 24px 80px",
-          }}
-        >
-          {/* ══════════ STEP 0: ROLE SELECT ══════════ */}
-          {step === 0 && <RoleSelector pickRole={pickRole} D={D} />}
+        {/* All content sits above the background */}
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <Header
+            D={D}
+            step={step}
+            reset={reset}
+            role={role}
+            hero={hero}
+            backToHeroPicker={backToHeroPicker}
+          />
 
-          {/* ══════════ STEP 1: HERO PICKER ══════════ */}
-          {step === 1 && role && (
-            <HeroPicker
-              filtered={filtered}
-              role={role}
-              query={query}
-              setQuery={setQuery}
-              inputRef={inputRef}
-              D={D}
-              step={step}
-              reset={reset}
-              backToHeroPicker={backToHeroPicker}
-              confirmHero={confirmHero}
-              hero={hero}
-              PORT={PORT}
-              setHero={setHero}
-            />
-          )}
+          <main
+            style={{
+              maxWidth: 1100,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              minHeight: "100vh",
+              margin: "0 auto",
+              padding: "32px 24px 80px",
+            }}
+          >
+            {step === 0 && <RoleSelector pickRole={pickRole} D={D} />}
 
-          {/* ══════════ STEP 2: COUNTER PICKS ══════════ */}
-          {step === 2 && role && hero && (
-            <CounterPicks
-              hero={hero}
-              role={role}
-              D={D}
-              counters={counters}
-              guideC={guideC}
-              setGuideC={setGuideC}
-              backToHeroPicker={backToHeroPicker}
-              PORT={PORT}
-              guidePanelRef={guidePanelRef}
-            />
-          )}
-        </main>
+            {step === 1 && role && (
+              <HeroPicker
+                filtered={filtered}
+                role={role}
+                query={query}
+                setQuery={setQuery}
+                inputRef={inputRef}
+                D={D}
+                step={step}
+                reset={reset}
+                backToHeroPicker={backToHeroPicker}
+                confirmHero={confirmHero}
+                hero={hero}
+                PORT={PORT}
+                setHero={setHero}
+              />
+            )}
 
-        <Footer D={D} />
+            {step === 2 && role && hero && (
+              <CounterPicks
+                hero={hero}
+                role={role}
+                D={D}
+                counters={counters}
+                guideC={guideC}
+                setGuideC={setGuideC}
+                backToHeroPicker={backToHeroPicker}
+                PORT={PORT}
+                guidePanelRef={guidePanelRef}
+              />
+            )}
+          </main>
+
+          <Footer D={D} />
+        </div>
       </div>
     </>
   );

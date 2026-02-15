@@ -2,7 +2,7 @@ import { useState } from "react";
 import { HEROES } from "../data";
 
 // ── COUNTER ROW (step 2 right list) ──────────────────────────────────────────
-export function CounterRow({ c, rank, D, active, onToggle, port: PORT }) {
+export function CounterRow({ c, rank, D, onToggle, port: PORT }) {
   const h = HEROES.find((x) => x.id === c.hero);
   const col = h?.color ?? "#888";
   const [ok, setOk] = useState(false);
@@ -16,23 +16,21 @@ export function CounterRow({ c, rank, D, active, onToggle, port: PORT }) {
         alignItems: "stretch",
         width: "100%",
         textAlign: "left",
-        background: active ? `${col}0e` : D.panel,
-        border: `1.5px solid ${active ? col + "55" : D.bdr}`,
+        background: `${col}0e`,
+        border: `1.5px solid ${col + "55"}`,
         borderLeft: `4px solid ${col}`,
         borderRadius: 6,
         borderBottomRightRadius: 0,
         borderBottomLeftRadius: 0,
         overflow: "hidden",
         cursor: "pointer",
-        boxShadow: active
-          ? `0 0 22px ${col}20, 0 4px 16px rgba(0,0,0,.35)`
-          : "0 2px 12px rgba(0,0,0,.38)",
+        boxShadow: `0 0 22px ${col}20, 0 4px 16px rgba(0,0,0,.35)`,
       }}
     >
       {/* Portrait */}
       <div
         style={{
-          width: 90,
+          width: 120,
           flexShrink: 0,
           position: "relative",
           overflow: "hidden",
@@ -99,11 +97,10 @@ export function CounterRow({ c, rank, D, active, onToggle, port: PORT }) {
         >
           {rank}
         </div>
-        {active && (
-          <div
-            style={{ position: "absolute", inset: 0, background: `${col}1a` }}
-          />
-        )}
+
+        <div
+          style={{ position: "absolute", inset: 0, background: `${col}1a` }}
+        />
       </div>
 
       {/* Text */}
@@ -122,7 +119,7 @@ export function CounterRow({ c, rank, D, active, onToggle, port: PORT }) {
             style={{
               fontSize: 17,
               fontWeight: 700,
-              color: active ? col : D.txt,
+              color: col,
               letterSpacing: 0.3,
               transition: "color .12s",
             }}

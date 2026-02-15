@@ -25,7 +25,8 @@ const Header = ({ D }) => {
       >
         {/* Left: logo + breadcrumb */}
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <span
+          <a
+            href="/"
             className="cp"
             style={{
               fontSize: 15,
@@ -35,7 +36,7 @@ const Header = ({ D }) => {
             }}
           >
             DOTA 2 PRO COUNTER
-          </span>
+          </a>
 
           <span
             style={{
