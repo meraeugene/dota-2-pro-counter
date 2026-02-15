@@ -1,0 +1,48 @@
+// ── ROLES ─────────────────────────────────────────────────────────────────────
+export const ROLES = [
+  {
+    id: "carry",
+    label: "Carry",
+    sub: "Safelane",
+    pos: "Pos 1",
+    color: "#f87171",
+    enemyRole: "Offlane",
+    prompt: "Who is your offlane opponent?",
+  },
+  {
+    id: "mid",
+    label: "Mid",
+    sub: "Midlane",
+    pos: "Pos 2",
+    color: "#60a5fa",
+    enemyRole: "Mid",
+    prompt: "Who is your midlane opponent?",
+  },
+  {
+    id: "offlane",
+    label: "Offlane",
+    sub: "Hardlane",
+    pos: "Pos 3",
+    color: "#34d399",
+    enemyRole: "Carry",
+    prompt: "Who is the enemy carry?",
+  },
+  {
+    id: "soft_support",
+    label: "Soft Support",
+    sub: "Roaming",
+    pos: "Pos 4",
+    color: "#fbbf24",
+    enemyRole: "Core",
+    prompt: "Who is the enemy carry?",
+  },
+  {
+    id: "hard_support",
+    label: "Hard Support",
+    sub: "Babysitter",
+    pos: "Pos 5",
+    color: "#a78bfa",
+    enemyRole: "offlane",
+    prompt: "Who is the enemy offlane?",
+  },
+];
