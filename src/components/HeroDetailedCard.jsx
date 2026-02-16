@@ -120,7 +120,7 @@ export function HeroDetailCard({ h, role, D, onBack, port: PORT }) {
       </div>
 
       {/* Info block */}
-      <div style={{ padding: "2px 20px 22px" }}>
+      <div style={{ padding: "12px 20px 22px" }}>
         {/* Enemy role badge */}
         <div
           style={{
@@ -234,7 +234,7 @@ export function HeroDetailCard({ h, role, D, onBack, port: PORT }) {
 
         <div style={{ height: 1, background: D.bdr, margin: "14px 0" }} />
 
-        <p style={{ fontSize: 13, color: D.sub, lineHeight: 1.7 }}>
+        <p style={{ fontSize: 14, color: D.sub, lineHeight: 1.7 }}>
           Select a counter pick on the right to view skills and lane strategy.
         </p>
       </div>

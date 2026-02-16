@@ -1483,175 +1483,335 @@ export const COUNTERS = {
       },
     ],
   },
-  crystal_maiden: {
-    carry: [
-      {
-        hero: "juggernaut",
-        summary:
-          "Blade Fury magic immunity negates CM's entire kit for 5 seconds every 30.",
-        tags: ["magic immunity", "fury"],
-        skills: [
-          {
-            name: "Blade Fury",
-            tip: "Activate immediately when CM casts Frostbite — magic immunity cancels the root mid-cast.",
-          },
-          {
-            name: "Omnislash",
-            tip: "Use after Blade Fury ends — CM is low HP from harassment and has no escape.",
-          },
-          {
-            name: "Healing Ward",
-            tip: "Place ward after engaging — CM will target it first, buying you time to finish the kill.",
-          },
-        ],
-        tips: [
-          "Bait CM's Frostbite by walking up, then activate Fury immediately on her cast animation.",
-          "Approach from the jungle side so CM has no creep-block — she must Frostbite early or let you hit freely.",
-          "Check CM's mana before committing — no mana means no Frostbite, just right-click her without Fury.",
-        ],
-        guide: G(
-          "Level 3 Blade Fury with magic immunity. CM cannot stop you. Guaranteed kill every 30s.",
-          "Bait CM's Frostbite by walking up, then Fury immediately when she casts. Omnislash after.",
-          "Approach from jungle side so CM has no creep-block. She must Frostbite early or let you hit.",
-          "Walk up → Frostbite cast → Fury immediately — cancelled during Fury startup. Win every trade.",
-          "Forgetting to check CM's mana. If no Frostbite mana, just right-click — save Fury.",
-        ),
-      },
-    ],
+  arc_warden: {
     mid: [
       {
-        hero: "puck",
+        hero: "storm_spirit",
         summary:
-          "Phase Shift blocks every CM ability; Waning Rift purges Frostbite and silences her.",
-        tags: ["dodge", "purge"],
+          "Storm Spirit ignores Flux pressure, outpaces Arc’s farm, and kills clones instantly.",
+        tags: ["tempo counter", "gap close", "clone punish"],
         skills: [
           {
-            name: "Phase Shift",
-            tip: "Blocks Frostbite, Freezing Field, and Frost Nova — use on every CM spell cast animation.",
+            name: "Ball Lightning",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/abilities/storm_spirit_ball_lightning_lg.png",
+            tip: "Instant gap close deletes Arc or Tempest Double before Flux value.",
           },
           {
-            name: "Waning Rift",
-            tip: "Purges Frostbite slow and silences CM simultaneously — frees you and locks her out.",
+            name: "Static Remnant",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/abilities/storm_spirit_static_remnant_lg.png",
+            tip: "One remnant clears clone safely and forces Arc back.",
           },
+          {
+            name: "Overload",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/abilities/storm_spirit_overload_lg.png",
+            tip: "Punishes Arc every time he steps up to last hit.",
+          },
+        ],
+        tips: [
+          "Abuse level 6 timing — Arc cannot survive zip + remnant.",
+          "Kill clone first to remove Spark Wraith spam.",
+          "Control runes to starve Arc’s farm.",
+        ],
+        guide: {
+          powerSpike:
+            "Storm Spirit hits level 6 → can kill Arc or clone instantly.",
+          skillUsage:
+            "Use Ball Lightning + Static Remnant combo to delete Tempest Double safely.",
+          positioning:
+            "Stay out of Flux range; engage from river/jungle angles for surprise.",
+          trading:
+            "Trade aggressively post-6; avoid extended trades before Spike.",
+          mistakes:
+            "Overextending without balling out — Arc can counter with Spark Wraith + Flux.",
+          fightRole:
+            "Initiator and primary kill threat in mid-fights; can solo pick Arc or clone.",
+          timing:
+            "Bottle + boots timing → rotate to side lanes early; Orchid timing → force kills on Arc before he farms core items; BKB timing → join mid-game fights safely.",
+        },
+        build: [
+          {
+            name: "Power Treads",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/power_treads_lg.png",
+            tip: "Flexible stat swapping and attack speed — great all‑around boots.",
+          },
+          {
+            name: "Aghanim's Scepter",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/ultimate_scepter_lg.png",
+            tip: "Upgrades ultimate for increased mobility and burst damage.",
+          },
+          {
+            name: "Black King Bar",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/black_king_bar_lg.png",
+            tip: "Spell immunity for reliable presence in teamfights.",
+          },
+          {
+            name: "Linken's Sphere",
+            img: "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/23/Linken%27s_Sphere_icon.png/revision/latest?cb=20160530171144",
+            tip: "Blocks single‑target disables and interrupts.",
+          },
+          {
+            name: "Kaya & Sange",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/kaya_and_sange_lg.png",
+            tip: "Increases spell damage and durability — great for long fights.",
+          },
+          {
+            name: "Parasma",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/devastator_lg.png",
+            tip: "Adds huge intelligence, attack speed, slows enemies, and reduces their magic resistance — strong for hybrid damage builds.",
+          },
+        ],
+      },
+
+      {
+        hero: "templar_assassin",
+        summary:
+          "Refraction blocks Arc’s poke and Psi Blades dominate lane equilibrium.",
+        tags: ["lane dominator", "burst"],
+        skills: [
+          {
+            name: "Refraction",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/abilities/templar_assassin_refraction_lg.png",
+            tip: "Completely blocks Flux + Wraith harassment.",
+          },
+          {
+            name: "Psi Blades",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/abilities/templar_assassin_psi_blades_lg.png",
+            tip: "Forces Arc off the wave without exposing yourself.",
+          },
+        ],
+        tips: [
+          "Hold Refraction charges before committing.",
+          "Deny ranged creeps aggressively.",
+        ],
+        guide: {
+          powerSpike:
+            "Refraction + Psi Blades level 2–3 overwhelms Arc’s harassment.",
+          skillUsage:
+            "Use Psi Blades to harass and zone; Refraction to block Flux or Spark Wraith damage.",
+          positioning:
+            "Stand slightly back to maximize Psi Blade splash but avoid overextension.",
+          trading: "Trade aggressively when Arc steps up for last hits.",
+          mistakes:
+            "Wasting Refraction early leaves you vulnerable to Arc’s poke.",
+          fightRole: "Lane dominator; sets tempo and prevents Arc’s safe farm.",
+          timing:
+            "Early Desolator timing → pressure Arc under tower; Blink Dagger timing → kill clone or rotate to other lanes immediately after securing mid wave.",
+        },
+        build: [
+          {
+            name: "Black King Bar",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/black_king_bar_lg.png",
+            tip: "Essential spell immunity to survive disables in teamfights.",
+          },
+          {
+            name: "Monkey King Bar",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/monkey_king_bar_lg.png",
+            tip: "Ensures hits land against evasion and agile targets.",
+          },
+          {
+            name: "Daedalus",
+            img: "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/24/Daedalus_icon.png/revision/latest?cb=20160530165249",
+            tip: "Massive critical strike damage for killing cores quickly.",
+          },
+          {
+            name: "Desolator",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/desolator_lg.png",
+            tip: "Reduces armor, increasing TA’s physical damage output.",
+          },
+          {
+            name: "Hurricane Pike",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/hurricane_pike_lg.png",
+            tip: "Gap closer and defensive repositioning in fights.",
+          },
+          {
+            name: "Swift Blink",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/blink_lg.png",
+            tip: "Essential for initiating Refraction combos or escaping danger.",
+          },
+        ],
+      },
+
+      {
+        hero: "ember_spirit",
+        summary: "Ember Spirit dodges Spark Wraiths and pressures Arc nonstop.",
+        tags: ["mobility", "wave clear"],
+        skills: [
+          {
+            name: "Sleight of Fist",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/abilities/ember_spirit_sleight_of_fist_lg.png",
+            tip: "Dodges Wraiths and harasses safely.",
+          },
+          {
+            name: "Flame Guard",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/abilities/ember_spirit_flame_guard_lg.png",
+            tip: "Soaks Arc’s magical poke and clears waves fast.",
+          },
+        ],
+        tips: [
+          "Push waves and rotate — Arc hates tempo.",
+          "Punish clone with chains + sleight.",
+        ],
+        guide: {
+          powerSpike:
+            "Level 6–7 Flame Guard + Sleight enables aggressive rotations.",
+          skillUsage:
+            "Chain Sleight of Fist into Flame Guard for safe trades and wave clear.",
+          positioning:
+            "Maintain angles to dodge Spark Wraiths and Flux while harassing.",
+          trading:
+            "Trade only when Flame Guard can absorb poke; avoid full Arc poke before this.",
+          mistakes: "Sitting mid passively lets Arc farm uncontested.",
+          fightRole: "Secondary initiator; pressures lane and forces Arc out.",
+          timing:
+            "Maelstrom/BKB timing → rotate to side lanes; force fights immediately post-level 6; join mid rotations to prevent Arc’s Midas timing.",
+        },
+        build: [
+          {
+            name: "Phase Boots",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/phase_boots_lg.png",
+          },
+          {
+            name: "Aghanim's Scepter",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/ultimate_scepter_lg.png",
+          },
+          {
+            name: "Black King Bar",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/black_king_bar_lg.png",
+          },
+          {
+            name: "Shiva's Guard",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/shivas_guard_lg.png",
+          },
+          {
+            name: "Spirit Vessel",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/spirit_vessel_lg.png",
+          },
+          {
+            name: "Kaya and Sange",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/kaya_and_sange_lg.png",
+          },
+        ],
+      },
+
+      {
+        hero: "queen_of_pain",
+        summary: "Constant pressure and kill threat deny Arc safe farm.",
+        tags: ["harass", "kill lane"],
+        skills: [
+          {
+            name: "Shadow Strike",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/abilities/queenofpain_shadow_strike_lg.png",
+            tip: "Sustained damage forces Arc out of lane.",
+          },
+          {
+            name: "Blink",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/abilities/queenofpain_blink_lg.png",
+            tip: "Dodges Spark Wraiths and Flux.",
+          },
+        ],
+        guide: {
+          powerSpike:
+            "Levels 3–6 Shadow Strike + Scream allows strong kill pressure.",
+          skillUsage:
+            "Use Blink to dodge Spark Wraiths or Flux; Shadow Strike to poke Arc or clone.",
+          positioning:
+            "Stand in safe angles to harass without taking tower damage.",
+          trading:
+            "Trade when Shadow Strike stacks are up; avoid extended trades without blink safety.",
+          mistakes:
+            "Ignoring Arc’s clone can backfire if he setups Spark Wraiths.",
+          fightRole:
+            "Main lane harasser; forces Arc to use regen and play defensively.",
+          timing:
+            "Shadow Strike + Bottle + Blink → pressure Arc immediately post-wave; rotate to side lanes after level 6 to punish clone or poor positioning.",
+        },
+        build: [
+          {
+            name: "Aghanim's Scepter",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/ultimate_scepter_lg.png",
+          },
+          {
+            name: "Black King Bar",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/black_king_bar_lg.png",
+          },
+          {
+            name: "Shiva's Guard",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/shivas_guard_lg.png",
+          },
+          {
+            name: "Linken's Sphere",
+            img: "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/23/Linken%27s_Sphere_icon.png/revision/latest?cb=20160530171144",
+          },
+          {
+            name: "Octarine Core",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/octarine_core_lg.png",
+          },
+          {
+            name: "Kaya and Sange",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/kaya_and_sange_lg.png",
+          },
+        ],
+      },
+
+      {
+        hero: "puck",
+        summary: "Puck clears waves safely and punishes Arc’s immobility.",
+        tags: ["control", "wave clear"],
+        skills: [
           {
             name: "Illusory Orb",
-            tip: "Poke safely from maximum range every wave — CM cannot respond to it effectively.",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/abilities/puck_illusory_orb_lg.png",
+            tip: "Safely clears waves and dodges Spark Wraiths.",
+          },
+          {
+            name: "Dream Coil",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/abilities/puck_dream_coil_lg.png",
+            tip: "Locks Arc and clone in place — guaranteed kill with follow-up.",
           },
         ],
-        tips: [
-          "You have zero losing trades against CM with Phase Shift — every engagement is free damage on your side.",
-          "Phase Shift on auto-attacks is wasted — only block spells (Frostbite costs 170 mana per cast).",
-          "Orb poke every wave: Phase Shift Frostbite, Rift purge slow, Orb back out — net Puck gains, CM loses.",
-        ],
-        guide: G(
-          "Level 3 Phase Shift makes you immune to 100% of CM's damage. She literally cannot kill you.",
-          "Phase Shift every Frostbite. Waning Rift purges Slow and silences CM. Orb for safe range farm.",
-          "Orb poke every wave. Phase Shift Frostbite, Rift purge, Orb back. Net: Puck +200, CM +0.",
-          "Zero losing trades against CM with Phase Shift. Every engagement is free damage for you.",
-          "Wasting Phase Shift on CM's auto-attacks. Only dodge spells — physical hits are ignorable.",
-        ),
-      },
-    ],
-    offlane: [
-      {
-        hero: "mars",
-        summary:
-          "Arena of Blood traps CM and blocks every Freezing Field escape route.",
-        tags: ["trap", "arena"],
-        skills: [
+        build: [
           {
-            name: "Arena of Blood",
-            tip: "Cast when CM attempts Freezing Field — she cannot run out or reposition to channel safely.",
+            name: "Power Treads",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/power_treads_lg.png",
           },
           {
-            name: "God's Rebuke",
-            tip: "Bounce CM into Arena walls for a 1.5-second stun — trees nearby make this consistent.",
+            name: "Linken's Sphere",
+            img: "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/23/Linken%27s_Sphere_icon.png/revision/latest?cb=20160530171144",
           },
           {
-            name: "Spear of Mars",
-            tip: "Pierce CM into a tree for an additional stun — trees near the offlane make this easy.",
+            name: "Mjolnir",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/mjollnir_lg.png",
+          },
+          {
+            name: "Aghanim's Scepter",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/ultimate_scepter_lg.png",
+          },
+          {
+            name: "Overwhelming Blink",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/overwhelming_blink_lg.png",
+          },
+          {
+            name: "Parasma",
+            img: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/devastator_lg.png",
           },
         ],
-        tips: [
-          "Fight CM near trees — trees give Arena walls for Rebuke bounce stun. Open ground negates this.",
-          "Arena cast while CM starts Freezing Field means she cannot channel 2.5 seconds inside a 3-second Arena.",
-          "Blink from fog onto CM's support position — she stands behind creeps, Blink past the wave and Call.",
-        ],
-        guide: G(
-          "Level 6 Arena + Rebuke trapping CM during Freezing Field = can't escape or channel. Arena wins.",
-          "Rebuke → bounce off Arena wall → 1.5s stun. Then Spear. Then Arena if she tries to run.",
-          "Force CM near trees. Trees act as Arena walls for Rebuke bounce stun. Open field reduces stun.",
-          "At level 3, Spear + Rebuke + Arena = CM dead every time within 700 units.",
-          "Arena in open ground without walls = no Rebuke bounce stun. Always fight CM near trees.",
-        ),
-      },
-    ],
-    soft_support: [
-      {
-        hero: "lion",
-        summary:
-          "Hex prevents Freezing Field channel; Finger executes CM's low HP instantly.",
-        tags: ["hex", "execute"],
-        skills: [
-          {
-            name: "Hex",
-            tip: "Cast the moment CM begins Freezing Field animation — the channel is cancelled before it deals damage.",
-          },
-          {
-            name: "Earth Spike",
-            tip: "Follow Hex immediately — pins CM in place while she's helpless during the hex duration.",
-          },
-          {
-            name: "Finger of Death",
-            tip: "Execute CM cleanly after Hex — her low HP pool means no followup is needed.",
-          },
-        ],
-        tips: [
-          "Hex on Freezing Field animation not on approach — don't waste it on general lane harassment.",
-          "Mana Drain on CM every trade keeps her below Freezing Field cost (200+ mana per cast).",
-          "Hex + Spike + Finger total 3 abilities in 1.5 seconds — CM has no response in that window.",
-        ],
-        guide: G(
-          "Level 6 Hex + Finger = CM dies every Freezing Field attempt. Combo faster than her channel.",
-          "Hex on CM's Freezing Field animation. Earth Spike for lockdown. Finger to execute.",
-          "Stay at Hex range (800 units) near carry. CM at 600 units — unexpected fog angles.",
-          "Mana Drain every trade. She has 500 mana at level 5 — 3 Drains = no Freezing Field.",
-          "Hexing CM before Freezing Field cast. Hold for the ult animation — not harassment.",
-        ),
-      },
-    ],
-    hard_support: [
-      {
-        hero: "oracle",
-        summary:
-          "Fate's Edict blocks CM's magic damage entirely; Purifying Flames out-heals her harassment.",
-        tags: ["magic block", "sustain"],
-        skills: [
-          {
-            name: "Fate's Edict",
-            tip: "Completely blocks CM's magic damage for 4 seconds — entire harassment pattern nullified.",
-          },
-          {
-            name: "Purifying Flames",
-            tip: "Heal carry constantly through Frostbite and Slow harassment — out-sustains her mana output.",
-          },
-          {
-            name: "Fortune's End",
-            tip: "Full channel purges Frostbite slow — free carry after CM wastes cooldowns.",
-          },
-        ],
-        tips: [
-          "Edict on the first Frostbite animation you see — never hesitate, it blocks 4 seconds of all magic.",
-          "With Edict active your carry takes 0 damage from CM for 4 seconds every 17 seconds — near 100% uptime.",
-          "Stay near carry for Edict line of sight — CM stands at 600-1000 units, cover that entire zone.",
-        ],
-        guide: G(
-          "Fate's Edict blocks CM's magic damage for 4 seconds. Entire harassment pattern blocked.",
-          "Edict during Frostbite + Slow chains. Fortune's End purges slow. Flames for healing.",
-          "Stay near carry for Edict LoS. CM stands back — cover her typical cast ranges.",
-          "With Edict carry takes 0 damage from CM for 4s every 17s. Near 100% uptime.",
-          "Saving Edict instead of preemptive use. Use on first Frostbite animation — never hesitate.",
-        ),
+
+        guide: {
+          powerSpike:
+            "Level 6 Dream Coil opens kill potential on Arc or Tempest Double.",
+          skillUsage:
+            "Use Orb + Coil to control Arc; clear waves and rotate safely.",
+          positioning:
+            "Stay at orb distance to avoid Flux; Coil for zone control in fights.",
+          trading:
+            "Trade when Arc steps forward to last hit — Orb + auto-attacks poke safely. Avoid trading under Spark Wraiths or near tower.",
+          mistakes:
+            "Overextending mid without Orb escape can lead to counter-kills.",
+          fightRole:
+            "Utility and control in mid-fights; zone Arc and clone during engagements.",
+          timing:
+            "Orchid/Blink/Level 6 Coil → rotate to side lanes; join mid rotations and control jungle; punish Arc when clone is exposed.",
+        },
       },
     ],
   },

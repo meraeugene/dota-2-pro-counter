@@ -14,6 +14,35 @@ export const Icon = {
       <path d="m3 21 3-3" />
     </svg>
   ),
+  CrossedSwords: () => (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M21 3 12 12M12 12 3 3M12 12l9 9M12 12 3 21" />
+    </svg>
+  ),
+  Clock: () => (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 6v6l4 2" />
+    </svg>
+  ),
   Build: () => (
     <svg
       width="14"

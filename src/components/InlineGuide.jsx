@@ -4,11 +4,18 @@ import { Icon } from "./Icons";
 
 // ── INLINE GUIDE (expands under each counter row) ────────────────────────────
 const GUIDE_KEYS = [
-  { key: "powerSpike", label: "Power Spike", GIcon: Icon.Zap, col: "#fbbf24" },
-  { key: "skillUsage", label: "Skill Usage", GIcon: Icon.Star, col: "#60a5fa" },
-  { key: "positioning", label: "Positioning", GIcon: Icon.Map, col: "#34d399" },
-  { key: "trading", label: "Trading", GIcon: Icon.Sword, col: "#f87171" },
-  { key: "mistakes", label: "Avoid", GIcon: Icon.Alert, col: "#a78bfa" },
+  { key: "powerSpike", label: "Power Spike", GIcon: Icon.Zap, col: "#fbbf24" }, // yellow
+  { key: "skillUsage", label: "Skill Usage", GIcon: Icon.Star, col: "#60a5fa" }, // blue
+  { key: "positioning", label: "Positioning", GIcon: Icon.Map, col: "#34d399" }, // green
+  {
+    key: "trading",
+    label: "Trading",
+    GIcon: Icon.CrossedSwords,
+    col: "#a78bfa",
+  }, // purple
+  { key: "fightRole", label: "Fight Role", GIcon: Icon.Sword, col: "#f97316" }, // orange
+  { key: "timing", label: "Timing", GIcon: Icon.Clock, col: "#8b5cf6" }, // violet
+  { key: "mistakes", label: "Avoid", GIcon: Icon.Alert, col: "#ef4444" }, // red
 ];
 
 export function InlineGuide({ c, D }) {
@@ -64,15 +71,27 @@ export function InlineGuide({ c, D }) {
               {[
                 { id: "skills", label: "Skill Tips", Ic: Icon.Star },
                 { id: "guide", label: "Lane Guide", Ic: Icon.Book },
-                { id: "build", label: "Best Build", Ic: Icon.Build },
+                { id: "build", label: "Item Build", Ic: Icon.Build },
               ].map((t) => (
                 <button
                   key={t.id}
                   onClick={() => setTab(t.id)}
+                  onMouseEnter={(e) => {
+                    if (tab !== t.id) {
+                      e.currentTarget.style.background = `${col}22`;
+                      e.currentTarget.style.color = col;
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (tab !== t.id) {
+                      e.currentTarget.style.background = "transparent";
+                      e.currentTarget.style.color = D.sub;
+                    }
+                  }}
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    gap: 5,
+                    gap: 6,
                     padding: "6px 14px",
                     borderRadius: 6,
                     cursor: "pointer",
@@ -82,7 +101,7 @@ export function InlineGuide({ c, D }) {
                     letterSpacing: 0.5,
                     background: tab === t.id ? col : "transparent",
                     color: tab === t.id ? "#000" : D.sub,
-                    transition: "all .14s",
+                    transition: "all .14s ease",
                   }}
                 >
                   <t.Ic />
@@ -90,29 +109,6 @@ export function InlineGuide({ c, D }) {
                 </button>
               ))}
             </div>
-
-            {/* <button
-              className="iconbtn"
-              style={{
-                color: D.dim,
-                padding: "4px 8px",
-                borderRadius: 6,
-                flexShrink: 0,
-                background: "rgba(255,255,255,.05)",
-                border: `1px solid ${D.bdr}`,
-              }}
-            >
-              <Icon.Close />
-              <span
-                style={{
-                  fontSize: 11,
-                  fontFamily: "'Chakra Petch',sans-serif",
-                  letterSpacing: 0.5,
-                }}
-              >
-                Close
-              </span>
-            </button> */}
           </div>
         </div>
       </div>
@@ -139,16 +135,33 @@ export function InlineGuide({ c, D }) {
                   border: `1px solid ${D.bdr2}`,
                 }}
               >
-                <div
-                  style={{
-                    width: 8,
-                    height: 8,
-                    borderRadius: 2,
-                    background: col,
-                    flexShrink: 0,
-                    marginTop: 4,
-                  }}
-                />
+                {sk.img ? (
+                  <img
+                    src={sk.img}
+                    alt={sk.name}
+                    style={{
+                      width: 32,
+                      height: 32,
+                      borderRadius: 6,
+                      objectFit: "cover",
+                      flexShrink: 0,
+                      border: `1px solid ${D.bdr2}`,
+                      background: "#000",
+                      boxShadow: `0 0 8px ${col}66`,
+                    }}
+                  />
+                ) : (
+                  <div
+                    style={{
+                      width: 8,
+                      height: 8,
+                      borderRadius: 2,
+                      background: col,
+                      flexShrink: 0,
+                      marginTop: 6,
+                    }}
+                  />
+                )}
                 <div style={{ flex: 1 }}>
                   <span
                     className="cp"
@@ -268,6 +281,19 @@ export function InlineGuide({ c, D }) {
               </div>
             ))}
           </div>
+
+          {/* Note */}
+          <div
+            style={{
+              marginTop: 8,
+              fontSize: 10,
+              color: D.sub,
+              fontStyle: "italic",
+              textAlign: "center",
+            }}
+          >
+            Items are based on <strong>Dota 2 Pro Tracker</strong> data
+          </div>
         </div>
       ) : (
         /* Guide tab */
@@ -323,7 +349,7 @@ export function InlineGuide({ c, D }) {
                 style={{
                   fontSize: 14,
                   lineHeight: 1.65,
-                  color: D.sub,
+                  color: "#f5f5f5",
                   fontWeight: 400,
                   flex: 1,
                 }}

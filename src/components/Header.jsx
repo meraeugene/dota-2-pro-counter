@@ -65,7 +65,7 @@ const Header = ({ D }) => {
               textTransform: "uppercase",
             }}
           >
-            Developed by Andrew Villalon
+            Developed by Avill Labs
           </span>
         </div>
       </div>
